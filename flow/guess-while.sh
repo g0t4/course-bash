@@ -5,7 +5,7 @@ echo
 
 echo "Guess a number from 0 to 9, type 'stop' to exit!"
 i=1
-until read -p "guess $i: " guess && [[ "$guess" == "stop" ]]; do
+until read -p "guess $i: " guess && [[ "$guess" == "stop" ]] && echo "Goodbye" ; do
     
     if ! [[ $guess =~ ^[0-9]$ ]]; then
         echo "Please enter a single digit number!"
