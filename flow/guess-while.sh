@@ -4,12 +4,12 @@ echo "target: $target"
 echo
 
 echo "Guess a number from 0 to 9, three tries!"
-for ((i = 1; i <= 3; i++)); do
+i=1
+while (( i <= 3 )); do
     read -p "guess $i: " guess
 
     if ! [[ $guess =~ ^[0-9]$ ]]; then
         echo "Please enter a single digit number!"
-        ((i--)) # allow retry
         continue
     fi
 
@@ -18,6 +18,7 @@ for ((i = 1; i <= 3; i++)); do
         break
     fi
     echo "Nope!"
+    ((i++))
 done
 
 
