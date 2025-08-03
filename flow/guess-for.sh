@@ -9,6 +9,7 @@ for ((i = 1; i <= 3; i++)); do
 
     if ((guess == target)); then
         echo "CONGRATULATIONS! $target is the right number!"
+        break
     fi
 done
 
