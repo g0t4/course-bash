@@ -1,4 +1,4 @@
-target=$((RANDOM % 10))
+target=0 # $((RANDOM % 10))
 
 echo "target: $target"
 echo
@@ -6,6 +6,9 @@ echo
 echo "Guess a number from 0 to 9, three tries!"
 for ((i = 1; i <= 3; i++)); do
     read -p "guess $i: " guess
+
+    echo "$guess"
+    echo $(( guess ))
 
     if ((guess == target)); then
         echo "CONGRATULATIONS! $target is the right number!"
