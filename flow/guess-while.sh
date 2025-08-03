@@ -3,7 +3,7 @@ target=$((RANDOM % 10))
 echo "target: $target"
 echo
 
-echo "Guess a number from 0 to 9, three tries!"
+echo "Guess a number from 0 to 9, type 'stop' to exit!"
 i=1
 while true; do
     read -p "guess $i: " guess
