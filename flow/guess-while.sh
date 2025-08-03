@@ -5,8 +5,13 @@ echo
 
 echo "Guess a number from 0 to 9, three tries!"
 i=1
-while (( i <= 3 )); do
+while true; do
     read -p "guess $i: " guess
+
+    if [[ "$guess" == "stop" ]]; then
+        echo "Better luck next time!"
+        break
+    fi
 
     if ! [[ $guess =~ ^[0-9]$ ]]; then
         echo "Please enter a single digit number!"
