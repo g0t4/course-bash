@@ -14,8 +14,8 @@ head cpiai.csv > top.csv
 
 while read -r line; do
     case $line in
-        [[:alpha:]]*) true ;;
-        [0-9][0-9][0-9][0-9]*) true ;;
+        [[:alpha:]]*) ;;
+        [0-9][0-9][0-9][0-9]*) ;;
         *) echo "PROBLEM: $line" ;;
     esac
 done <modified.csv
