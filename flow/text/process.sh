@@ -7,6 +7,11 @@ tail -n +2 cpiai.csv > headerless.csv
 
 head cpiai.csv > top.csv
 
+
+
+
+
+
 while read -r line; do
     echo "$line"
 done <top.csv
