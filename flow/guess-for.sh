@@ -17,6 +17,7 @@ for ((i = 1; i <= 3; i++)); do
         echo "CONGRATULATIONS! $target is the right number!"
         break
     fi
+    echo "Nope!"
 done
 
 
