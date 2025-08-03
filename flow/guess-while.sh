@@ -5,14 +5,8 @@ echo
 
 echo "Guess a number from 0 to 9, type 'stop' to exit!"
 i=1
-while true; do
-    read -p "guess $i: " guess
-
-    if [[ "$guess" == "stop" ]]; then
-        echo "Better luck next time!"
-        break
-    fi
-
+until read -p "guess $i: " guess && [[ "$guess" == "stop" ]]; do
+    
     if ! [[ $guess =~ ^[0-9]$ ]]; then
         echo "Please enter a single digit number!"
         continue
