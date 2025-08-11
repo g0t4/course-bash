@@ -1,6 +1,6 @@
 echo "## Welcome to Wes's cleanup script!"
 echo
 
-read -rp "What needs to be organized? " response
-
-ls $response
+echo "1: $1"
+echo "2: $2"
+echo "3: $3"
