@@ -3,4 +3,4 @@ echo
 
 read -rp "What needs to be organized? " response
 
-ls $response
+(set -x; ls $response; ls "$response")
