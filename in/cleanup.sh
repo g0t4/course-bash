@@ -1,3 +1,7 @@
+
+# try me with:
+#   (set -x; source cleanup.sh *)
+
 echo "## Welcome to Wes's cleanup script!"
 echo
 
