@@ -8,3 +8,10 @@ function help_bat() {
     # echo "@: $@"
     # echo "#: $#"
 }
+
+function adder {
+    echo "\$#: $#"
+    for ((num = 0; num <= $#; num++)); do
+        echo "num: ${num}"
+    done
+}
