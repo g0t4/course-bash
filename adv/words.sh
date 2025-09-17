@@ -48,7 +48,7 @@ function adder() {
 
 
 function show_words() {
-    declare -p IFS | bat -l bash
+    # declare -p IFS | bat -l bash
     # preserves passed words (no new splitting)
     #  think of this is "show your words"
     for param in "$@"; do
