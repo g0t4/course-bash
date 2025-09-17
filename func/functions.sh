@@ -11,7 +11,7 @@ function help_bat() {
 
 function adder() {
     echo "\$#: $#"
-    for ((num = 0; num < $#; num++)); do
-        echo "num: $num"
+    for ((num = 1; num <= $#; num++)); do
+        echo "num: $num = ${!num}"
     done
 }
