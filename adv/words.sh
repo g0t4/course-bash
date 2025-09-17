@@ -11,6 +11,8 @@ function adder() {
     local -i sum=0
     for param in "$@"; do
         echo "word: $param"
+
+        # FYI, sum is not the point of this demo:
         sum+=$param
     done
     echo "sum: $sum"
