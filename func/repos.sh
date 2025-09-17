@@ -1,4 +1,5 @@
 function is_git_repo {
+    # ignore STDOUT/STDERR if git is missing OR not in work tree (repo)
     git rev-parse --is-inside-work-tree 1>/dev/null 2>&1
 }
 
