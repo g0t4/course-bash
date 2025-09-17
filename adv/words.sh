@@ -7,10 +7,10 @@
 
 
 function adder() {
-    echo "\$#: $#"
+    echo "count: $#"
     local -i sum=0
     for param in "$@"; do
-        echo $param
+        echo "word: $param"
         sum+=$param
     done
     echo "sum: $sum"
