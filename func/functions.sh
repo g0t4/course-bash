@@ -11,7 +11,10 @@ function help_bat() {
 
 function adder() {
     echo "\$#: $#"
+    local -i sum=0
     for param in "$@"; do
         echo $param
+        sum+=$param
     done
+    echo "sum: $sum"
 }
