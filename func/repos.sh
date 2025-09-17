@@ -4,6 +4,7 @@ function is_git_repo {
 }
 
 function is_hg_repo {
+    # ignore STDOUT/STDERR if hg command is missing OR not in hg repo
     hg root >/dev/null 2>&1
 }
 
@@ -13,7 +14,6 @@ function git_repo_root {
 }
 
 function hg_repo_root {
-    # ignore STDOUT/STDERR if hg command is missing OR not in hg repo
     hg root 2>/dev/null
 }
 
