@@ -17,3 +17,14 @@ declare -A http_status_codes=(
     [503]="Service Unavailable"
     [504]="Gateway Timeout"
 )
+
+function get_status_of_url() {
+    local url="$1"
+
+    local http_code
+    http_code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+
+    local explain="${http_status_codes[$http_code]:-unknown code}"
+
+    echo "The status was $http_code: $explain"
+}
