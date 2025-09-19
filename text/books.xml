@@ -1,0 +1,19 @@
+<books>
+  <book>
+    <id>101</id>
+    <title>The Unix Way</title>
+    <author>Alice Example</author>
+  </book>
+
+  <book>
+    <id>102</id>
+    <title>Learning AWK</title>
+    <author>Bob Script</author>
+  </book>
+
+  <book>
+    <id>103</id>
+    <title>Mastering sed</title>
+    <author>Carol Stream</author>
+  </book>
+</books>
