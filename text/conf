@@ -1,0 +1,17 @@
+regexp=(?:\s|^)(CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES)(?:\s|$)
+colours=default,underline
+======
+regexp=\s{2,}(?:([a-z\-_0-9]+)\/)*([a-z\-_0-9]+)(:\S+)?\s{2,}\"
+colours=unchanged,yellow,bright_white,cyan
+======
+regexp=^(?!CONTAINER)(\w+)\s+([^\s]+)\s+(".*")\s+(.*(?=(?:Up|Exited|Created|Restarting)))
+colours=unchanged,bright_black,unchanged,bright_black,cyan
+======
+regexp=\sCreated\s
+colours=blue
+======
+regexp=(?:\s{2}|^)(?:Up|Restarting)(?:(?:\s[\w,\d]+)+)?
+colours=bold green
+======
+regexp=\s\(healthy\)
+colours=bold green
