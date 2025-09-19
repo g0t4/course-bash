@@ -3,11 +3,12 @@ BEGIN {
     OFS=": "
 
     for (_name in SYMTAB) {
-        if(typeof(SYMTAB[_name]) == "array"){
-            print(_name, "array");
+        type = typeof(SYMTAB[_name])
+        if(type == "array"){
+            print(_name, type)
             continue
         }
-        print(_name,  SYMTAB[_name])
+        print(_name, type, SYMTAB[_name])
     }
 }
 
