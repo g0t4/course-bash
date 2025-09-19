@@ -12,8 +12,13 @@ if (( DEBUG )); then
 fi
 
 LOG_FILE=${LOG_FILE:-"./example.log"}
+# log() { printf '%s %s\n' "$(date -Is)" "$*" | tee -a "$LOG_FILE" >&2; }
+# die() { log "ERROR: $*"; exit 1; }
+
 log() { printf '%s %s\n' "$(date -Is)" "$*" | tee -a "$LOG_FILE" >&2; }
 die() { log "ERROR: $*"; exit 1; }
+
+
 
 # cleanup() {
 #   local exit_code=$?
