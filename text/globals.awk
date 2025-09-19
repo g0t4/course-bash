@@ -1,5 +1,7 @@
 
 BEGIN {
+    OFS=": "
+
     for (_name in SYMTAB) {
         if(typeof(SYMTAB[_name]) == "array"){
             print(_name, "array");
