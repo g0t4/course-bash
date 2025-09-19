@@ -20,13 +20,26 @@
 
 
 
-NR==1 { 
-    # srand() 
-    srand(systime()) 
+# NR==1 { 
+#     # srand() 
+#     srand(systime()) 
+# }
+# NR>2 { 
+#     print rand(), NR, $0 
+# }
+
+
+
+BEGIN { 
+    seed = systime()
+    # print(seed)
+    srand(seed)
 }
+
 NR>2 { 
     print rand(), NR, $0 
 }
+
 
 
 
