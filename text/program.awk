@@ -4,9 +4,9 @@
 # NR==6  { nextfile }
 # { if( NR == 6 ) nextfile }
 
-NR>2 { 
-    print NR, $0 
-    print "  len", length($0) 
+NR>2 {
+    print NR, $0
+    print "  len", length($0)
 }
 
 

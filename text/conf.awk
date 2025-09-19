@@ -1,9 +1,9 @@
 BEGIN {
     RS="======\n";
-    FS="\n" 
+    FS="\n"
 
     print("CONF:")
-} 
+}
 
 {
     # print NR, $0
