@@ -27,12 +27,12 @@ die() {
 }
 
 
-# cleanup() {
-#   local exit_code=$?
-#   if [[ ${work_dir-} && -d ${work_dir-} ]]; then rm -rf "$work_dir"; fi
-#   [[ $exit_code -eq 0 ]] && log "SUCCESS" || log "FAILED (exit $exit_code)"
-# }
-# trap cleanup EXIT
+cleanup() {
+  local exit_code=$?
+  if [[ ${work_dir-} && -d ${work_dir-} ]]; then rm -rf "$work_dir"; fi
+  [[ $exit_code -eq 0 ]] && log "SUCCESS" || log "FAILED (exit $exit_code)"
+}
+trap cleanup EXIT
 # trap 'die "Interrupted (SIGINT)"' INT
 trap 'die "Command failed in $0 at line $LINENO: $BASH_COMMAND"' ERR
 
@@ -44,7 +44,7 @@ main() {
   work_dir="$(mktemp -d)"
   log "Working directory: $work_dir"
 
-  # cp missing.txt $work_dir
+  cp missing.txt $work_dir
 
   mapfile -t files < <(find "$source_dir" -type f -name "$pattern" -print)
   (( ${#files[@]} )) || die "No files match pattern: $pattern"
