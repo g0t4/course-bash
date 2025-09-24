@@ -46,6 +46,8 @@ done
 #     exit 1
 # fi
 
+echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
+
 # leaking variable(s) - prepend local
 MAX_RANDOM=32767
 DIVISOR=$((MAX_RANDOM / SIDES))
