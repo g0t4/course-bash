@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
+set -o | grep err|nounset
+
 set -u
+
+echo
+echo AFTER:
+set -o | grep err|nounset
 
 SIDES=""
 ROLLS=""
