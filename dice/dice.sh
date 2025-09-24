@@ -29,6 +29,8 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
+
 for ((roll = 1; roll <= $ROLLS; roll++)); do
     number=$((RANDOM % SIDES + 1))
     echo "roll $roll landed on: " $number
