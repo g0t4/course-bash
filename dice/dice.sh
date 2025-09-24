@@ -44,7 +44,7 @@ done
 
 echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
 
-for ((roll = 0; roll < $ROLLS; roll++)); do
+for ((roll = 1; roll <= $ROLLS; roll++)); do
     number=$((RANDOM % SIDES + 1))
     echo "roll $roll landed on: " $number
 done
