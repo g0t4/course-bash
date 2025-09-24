@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -u
+
 usage() {
     echo "Usage: $0 --sides <number> --rolls <number>"
     echo
