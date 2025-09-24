@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-# Defaults (optional)
-SIDES=""
-ROLLS=""
+# set -euo pipefail
 
 usage() {
     echo "Usage: $0 --sides <number> --rolls <number>"
