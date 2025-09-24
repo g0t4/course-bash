@@ -38,3 +38,5 @@ done
 # bash dice.sh # fails, obscure error
 # bash dice.sh --rolls 3 # division by 0
 # bash dice.sh --sides # HANGS!
+#
+# MAJOR => leak number variable (if sourced then remains)
