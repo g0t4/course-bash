@@ -31,6 +31,18 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Validate required args
+if [[ -z "$SIDES" || -z "$ROLLS" ]]; then
+    echo "Error: both --sides and --rolls are required"
+    usage
+fi
+
+# Validate numbers
+if ! [[ "$SIDES" =~ ^[0-9]+$ && "$ROLLS" =~ ^[0-9]+$ ]]; then
+    echo "Error: sides and rolls must be positive integers"
+    exit 1
+fi
+
 echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
 
 for ((roll = 1; roll <= $ROLLS; roll++)); do
