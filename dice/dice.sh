@@ -48,10 +48,9 @@ done
 
 echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
 
-# leaking variable(s) - prepend local
-MAX_RANDOM=32767
-DIVISOR=$((MAX_RANDOM / SIDES))
 for ((roll = 0; roll < $ROLLS; roll++)); do
-    number=$((RANDOM / DIVISOR))
+    number=$((RANDOM % SIDES + 1))
     echo "roll $roll landed on: " $number
 done
+
+# max RANDOM value == 32767
