@@ -42,7 +42,7 @@ done
 #     exit 1
 # fi
 
-echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
+# echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
 
 for ((roll = 1; roll <= $ROLLS; roll++)); do
     number=$((RANDOM % SIDES + 1))
