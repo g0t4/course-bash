@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-
-set -u
+set -euo pipefail
 
 echo "options:"
-set -o | grep err | nounset
+set -o | grep err|nounset
 
 SIDES=""
 ROLLS=""
