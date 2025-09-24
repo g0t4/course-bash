@@ -54,13 +54,3 @@ for ((roll = 1; roll <= $ROLLS; roll++)); do
     number=$((RANDOM % SIDES + 1))
     echo "roll $roll landed on: " $number
 done
-
-
-
-
-# * initial problems:
-# bash dice.sh # fails, obscure error
-# bash dice.sh --rolls 3 # division by 0
-# bash dice.sh --sides # HANGS!
-#
-# MAJOR => leak number variable (if sourced then remains)
