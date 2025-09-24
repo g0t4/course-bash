@@ -55,6 +55,9 @@ for ((roll = 1; roll <= $ROLLS; roll++)); do
     echo "roll $roll landed on: " $number
 done
 
+
+
+
 # * initial problems:
 # bash dice.sh # fails, obscure error
 # bash dice.sh --rolls 3 # division by 0
