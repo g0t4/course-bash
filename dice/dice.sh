@@ -45,3 +45,11 @@ if ! [[ "$SIDES" =~ ^[0-9]+$ && "$ROLLS" =~ ^[0-9]+$ ]]; then
     echo "Error: sides and rolls must be positive integers"
     exit 1
 fi
+
+# leaking variable(s) - prepend local
+MAX_RANDOM=32767
+DIVISOR=$((MAX_RANDOM / SIDES))
+for ((roll = 0; roll < $ROLLS; roll++)); do
+    number=$((RANDOM / DIVISOR))
+    echo "roll $roll landed on: " $number
+done
