@@ -1,9 +1,11 @@
 BEGIN {
+    OFS=": "
+    ORS="<--->"
     for (name in SYMTAB) {
         if (isarray(SYMTAB[name])) {
-            print(name ": array")
+            print(name,"array")
             continue
         }
-        print(name ": " SYMTAB[name])
+        print(name,SYMTAB[name])
     }
 }
