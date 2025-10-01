@@ -6,7 +6,8 @@
 # NR==6 { nextfile }
 # { if (NR == 6) nextfile }
 
+NR==1 { srand() }
+
 NR>2 {
-    srand()
     print rand(), NR, $0
 }
