@@ -41,7 +41,7 @@ main() {
   done
 
   log "Copied files:"
-  ls "$work_dir"
+  ls -l "$work_dir"
 
   log "Processed ${#files[@]} files."
 }
