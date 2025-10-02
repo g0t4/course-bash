@@ -2,7 +2,7 @@
 # Usage: ./robust.sh <source_dir> [pattern]
 # Example: ./robust.sh ./data "*.txt"
 
-# set -Eeuo pipefail
+set -Eeuo pipefail
 
 DEBUG=${DEBUG:-0}
 if (( DEBUG )); then
@@ -21,7 +21,7 @@ cleanup() {
 }
 # trap cleanup EXIT
 # trap 'die "Interrupted (SIGINT)"' INT
-# trap 'die "Command failed at line $LINENO: $BASH_COMMAND"' ERR
+trap 'die "Command failed in $0 at line $LINENO: $BASH_COMMAND"' ERR
 
 main() {
   # log "Starting: $0"
@@ -31,6 +31,8 @@ main() {
 
   work_dir="$(mktemp -d)"
   log "Working directory: $work_dir"
+
+  cp missing.txt $work_dir
 
   mapfile -t files < <(find "$source_dir" -type f -name "$pattern" -print)
   (( ${#files[@]} )) || die "No files match pattern: $pattern"
