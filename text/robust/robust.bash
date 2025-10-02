@@ -32,7 +32,7 @@ main() {
   work_dir="$(mktemp -d)"
   log "Working directory: $work_dir"
 
-  cp missing.txt $work_dir
+  # cp missing.txt $work_dir
 
   mapfile -t files < <(find "$source_dir" -type f -name "$pattern" -print)
   (( ${#files[@]} )) || die "No files match pattern: $pattern"
