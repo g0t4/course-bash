@@ -11,7 +11,7 @@ if (( DEBUG )); then
 fi
 
 LOG_FILE=${LOG_FILE:-"./example.log"}
-log() { printf '%s %s\n' "$(date +"%Y-%m-%dT%H:%M:%SZ")" "$*" | tee -a "$LOG_FILE" >&2; }
+log() { printf '\n%s %s\n' "$(date +"%Y-%m-%dT%H:%M:%SZ")" "$*" | tee -a "$LOG_FILE" >&2; }
 die() { log "ERROR: $*"; exit 1; }
 
 cleanup() {
@@ -35,9 +35,13 @@ main() {
   mapfile -t files < <(find "$source_dir" -type f -name "$pattern" -print)
   (( ${#files[@]} )) || die "No files match pattern: $pattern"
 
-  for file in "${files[@]}"; do
+  # IFS=$'\n\t'
+  for file in ${files[@]}; do
     cp -v -- "$file" "$work_dir"/ | tee -a "$LOG_FILE" >&2
   done
+
+  log "Copied files:"
+  ls "$work_dir"
 
   log "Processed ${#files[@]} files."
 }
