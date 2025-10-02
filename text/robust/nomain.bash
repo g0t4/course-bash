@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Usage: ./robust_example.sh <source_dir> [pattern]
-# Example: ./robust_example.sh ./data "*.txt"
+# Usage: ./nomain.sh <source_dir> [pattern]
+# Example: ./nomain.sh ./data "*.txt"
 
 set -Eeuo pipefail
 IFS=$'\n\t'
