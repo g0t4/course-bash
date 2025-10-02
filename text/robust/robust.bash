@@ -6,7 +6,7 @@ set -Eeuo pipefail
 
 DEBUG=${DEBUG:-0}
 if (( DEBUG )); then
-  # PS4='+ ${BASH_SOURCE}:${LINENO}: '
+  PS4='+ ${BASH_SOURCE}:${LINENO}: '
   set -x
 fi
 
@@ -17,7 +17,7 @@ die() { log "ERROR: $*"; exit 1; }
 cleanup() {
   local exit_code=$?
   if [[ ${work_dir-} && -d ${work_dir-} ]]; then rm -rf "$work_dir"; fi
-  [[ $exit_code -eq 0 ]] && log "SUCCESS" || log "FAILED (exit $exit_code)"
+  [[ $exit_code -eq 0 ]] && log $'\e[1;32mSUCCESS\e[0m' || log  $'\e[1;41mFAILED\e[0m'" (exit $exit_code)"
 }
 trap cleanup EXIT
 # trap 'die "Interrupted (SIGINT)"' INT
@@ -32,13 +32,13 @@ main() {
   work_dir="$(mktemp -d)"
   log "Working directory: $work_dir"
 
-  cp missing.txt $work_dir
+  # cp missing.txt $work_dir
 
   mapfile -t files < <(find "$source_dir" -type f -name "$pattern" -print)
   (( ${#files[@]} )) || die "No files match pattern: $pattern"
 
-  # IFS=$'\n\t'
-  for file in ${files[@]}; do
+  IFS=$'\n\t'
+  for file in "${files[@]}"; do
     cp -v -- "$file" "$work_dir"/ | tee -a "$LOG_FILE" >&2
   done
 
