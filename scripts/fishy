@@ -1,4 +1,2 @@
-#!/usr/bin/env fish
-
 echo Hello from fish, my PID is "$fish_pid"
 
