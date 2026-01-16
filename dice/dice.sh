@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-set -u
+set -euo pipefail
 echo "options:"
-set -o | grep -E nounset
+set -o | grep -E "err|nounset"
 
 usage() {
     echo "Usage: $0 --sides <number> --rolls <number>"
