@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -u
+echo "options:"
+set -o | grep -E "nounset"
+
 usage() {
     echo "Usage: $0 --sides <number> --rolls <number>"
     echo
@@ -28,6 +32,8 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+echo "🎲 Rolling $ROLLS dice with $SIDES sides each..."
 
 for ((roll = 1; roll <= $ROLLS; roll++)); do
     number=$((RANDOM % SIDES + 1))
