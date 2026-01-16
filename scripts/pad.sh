@@ -8,7 +8,8 @@ echo "Mode:" "$([[ $- == *i* ]] && echo interactive || echo non-interactive)"
 
 
 
-exit
+#exit
+
 if [[ $- == *i* ]]; then
     # interactive shell => prompt user
     read -p "Image file to clean: " image_path
