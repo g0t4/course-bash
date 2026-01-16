@@ -2,7 +2,7 @@
 
 set -u
 echo "options:"
-set -o | grep -E "nounset"
+set -o | grep -E nounset
 
 usage() {
     echo "Usage: $0 --sides <number> --rolls <number>"
