@@ -1,6 +1,6 @@
 echo '$-'="$-"
 echo "Mode:" "$([[ $- == *i* ]] && echo interactive || echo non-interactive)"
-# echo '$0'="$0"
+echo '$0'="$0"
 
 
 
