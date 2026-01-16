@@ -38,7 +38,7 @@ done
 
 # Validate required args
 if [[ -z "$SIDES" || -z "$ROLLS" ]]; then
-    echo "Error: both --sides and --rolls are required"
+    rich --print "[bold white on red]Error: both --sides and --rolls are required"
     usage
 fi
 
